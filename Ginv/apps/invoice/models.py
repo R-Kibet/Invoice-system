@@ -55,3 +55,7 @@ class Item(models.Model):
     net_amount = models.DecimalField(max_digits=7, decimal_places=2)
     vat_rate = models.IntegerField(default=0)
     discount = models.IntegerField(default=0)
+
+
+    def __str__(self):
+        return self.title
