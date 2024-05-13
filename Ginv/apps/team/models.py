@@ -8,7 +8,7 @@ class Team(models.Model):
     org_id = models.CharField(max_length=100, blank=True, null=True)
     invoice_1 = models.IntegerField(default=1)
     created_by = models.ForeignKey(User, related_name='teams', on_delete=models.CASCADE)
-
+    bankaccount = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.name
