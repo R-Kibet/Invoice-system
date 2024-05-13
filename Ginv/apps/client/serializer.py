@@ -24,3 +24,12 @@ class ClientSerializer(serializers.ModelSerializer):
             "contact_ref",
 
         )
+
+    def create(self, validate_data):
+        items_data = validate_data.pop("items")
+        invoice = invoice.objects.create(**validate_data)
+
+        for item in items_data:
+            item.objects.create(invoice=invoice, **item)
+
+        return invoice
