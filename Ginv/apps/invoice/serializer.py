@@ -20,6 +20,8 @@ class ItemSerializer(serializers.ModelSerializer):
 
 class InvoiceSerializer(serializers.ModelSerializer):
     items = ItemSerializer(many=True)
+    bankaccount = serializers.CharField(required=False)
+
     class Meta:
         model = Invoice
         read_only_fields = (
@@ -53,6 +55,7 @@ class InvoiceSerializer(serializers.ModelSerializer):
             "net_amount",
             "discount_amount",
             "is_paid",
+            "bankaccount",
             "items"
         )
 
