@@ -12,5 +12,10 @@ class TeamSerializer(serializers.ModelSerializer):
             "name",
             "org_id",
             "invoice_1",
-            "bankaccount"
+            "bankaccount",
+            "email",
+            'add1',
+            "add2",
+            'zipcd',
+            'place'
         )
